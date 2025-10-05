@@ -1,0 +1,22 @@
+{
+	"schemaVersion": 1,
+	"id": "combopvp",
+	"version": "${version}",
+	"name": "ComboPvP",
+	"description": "Makes PvP in recent versions similar to Combo Duels on Hypixel",
+	"authors": [
+		"RedstoneDisorder"
+	],
+	"license": "CC0-1.0",
+	"icon": "assets/combopvp/icon.png",
+	"environment": "*",
+	"entrypoints": {},
+	"mixins": [
+      "combopvp.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": ">=1.21.2",
+		"java": ">=21"
+	}
+}

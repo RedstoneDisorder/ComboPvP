@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "redstonedisorder.spamclickpvp.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "NoCooldowns",
+    "NoIFrames"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+	}
+}
