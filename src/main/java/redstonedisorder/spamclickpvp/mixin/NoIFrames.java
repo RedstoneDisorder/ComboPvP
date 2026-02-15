@@ -4,10 +4,11 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.world.ServerWorld;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import static redstonedisorder.spamclickpvp.Command.cooldown;
 
 @Mixin(LivingEntity.class)
 public class NoIFrames {
@@ -15,7 +16,7 @@ public class NoIFrames {
 	private void damage(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
 		if (cir.getReturnValue()) {
 			LivingEntity self = (LivingEntity)(Object)this;
-			self.timeUntilRegen = 0;
+			self.timeUntilRegen = cooldown;
 		}
 	}
 }
