@@ -15,8 +15,8 @@ public class NoIFrames {
 	@Inject(at = @At("TAIL"), method = "damage")
 	private void damage(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
 		if (cir.getReturnValue()) {
-			LivingEntity self = (LivingEntity)(Object)this;
-			self.timeUntilRegen = cooldown;
+			LivingEntity self = (LivingEntity) (Object) this;
+			if (source.getAttacker().isPlayer()) self.timeUntilRegen = cooldown;
 		}
 	}
 }
