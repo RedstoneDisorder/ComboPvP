@@ -1,5 +1,6 @@
 package redstonedisorder.spamclickpvp.mixin;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.world.ServerWorld;
@@ -16,7 +17,8 @@ public class NoIFrames {
 	private void damage(ServerWorld world, DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
 		if (cir.getReturnValue()) {
 			LivingEntity self = (LivingEntity) (Object) this;
-			if (source.getAttacker().isPlayer()) self.timeUntilRegen = cooldown;
+			Entity attacker = source.getAttacker();
+			if (attacker != null) if (attacker.isPlayer()) self.timeUntilRegen = cooldown;
 		}
 	}
 }
