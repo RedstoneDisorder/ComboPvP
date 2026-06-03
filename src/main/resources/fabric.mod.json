@@ -3,9 +3,9 @@
 	"id": "combopvp",
 	"version": "${version}",
 	"name": "ComboPvP",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Makes PvP in recent versions similar to Combo Duels on Hypixel",
 	"authors": [
-		"Me!"
+		"RedstoneDisorder"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
