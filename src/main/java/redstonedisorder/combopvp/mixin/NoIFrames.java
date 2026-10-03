@@ -19,6 +19,6 @@ public class NoIFrames {
 
 	@Inject(at = @At("TAIL"), method = "hurtServer")
 	private void hurtServer(ServerLevel serverLevel, DamageSource damageSource, float f, CallbackInfoReturnable<Boolean> cir) {
-		if (cir.getReturnValue() && damageSource.getDirectEntity() instanceof Player) damageCooldownTime = cooldown;
+		if (cir.getReturnValue() && damageSource.getDirectEntity() instanceof Player) this.damageCooldownTime = cooldown;
 	}
 }
