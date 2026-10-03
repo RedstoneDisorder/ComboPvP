@@ -3,17 +3,16 @@
 	"id": "combo-pvp",
 	"version": "${version}",
 	"name": "Combo PvP",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Allows customization of invincibility frames and removes attack cooldowns.",
 	"authors": [
 		"RedstoneDisorder"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/RedstoneDisorder/ComboPvP"
 	},
 	"license": "MIT",
 	"icon": "assets/combo-pvp/icon.png",
-	"environment": "*",
+	"environment": "server",
 	"entrypoints": {
 		"main": [
 			"redstonedisorder.combopvp.ComboPvP"
@@ -24,7 +23,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=0.19.5",
-		"minecraft": "~1.21.2",
+		"minecraft": ">=1.21.2 <=1.21.11",
 		"java": ">=21",
 		"fabric-api": "*"
 	}

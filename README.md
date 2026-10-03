@@ -1,9 +1,8 @@
-# Combo PvP
+# ComboPvP
 
-## Setup
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/BbtQr1GV?logo=modrinth&label=Downloads)
+![Modrinth Game Versions](https://img.shields.io/modrinth/game-versions/BbtQr1GV?logo=modrinth&label=Game%20versions)
 
-For setup instructions, please see the [Fabric Documentation page](https://docs.fabricmc.net/develop/getting-started/creating-a-project#setting-up) related to the IDE that you are using.
+The repo for the code in my mod, ComboPvP.
 
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+https://modrinth.com/mod/combo-pvp/
