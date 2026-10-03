@@ -12,7 +12,7 @@
 	},
 	"license": "MIT",
 	"icon": "assets/combo-pvp/icon.png",
-	"environment": "server",
+	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"redstonedisorder.combopvp.ComboPvP"
