@@ -30,11 +30,11 @@ public class ComboPvP implements ModInitializer {
 		// Proceed with mild caution.
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			dispatcher.register(Commands.literal("combopvp").then(Commands.argument("cooldown", IntegerArgumentType.integer(0))).requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_MODERATOR)).executes(context -> {
+			dispatcher.register(Commands.literal("combopvp").then(Commands.argument("cooldown", IntegerArgumentType.integer(0)).requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_MODERATOR)).executes(context -> {
 				cooldown = IntegerArgumentType.getInteger(context, "cooldown");
 				context.getSource().sendSuccess(() -> Component.literal("Cooldown is now " + cooldown + " ticks"), false);
 				return Command.SINGLE_SUCCESS;
-			}));
+			})));
 		});
 
 		LOGGER.info("ComboPvP loaded!");

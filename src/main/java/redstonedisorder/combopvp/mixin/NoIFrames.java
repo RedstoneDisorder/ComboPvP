@@ -16,6 +16,6 @@ import static redstonedisorder.combopvp.ComboPvP.cooldown;
 public class NoIFrames {
 	@Inject(at = @At("TAIL"), method = "hurtServer")
 	private void hurtServer(ServerLevel serverLevel, DamageSource damageSource, float f, CallbackInfoReturnable<Boolean> cir) {
-		if (cir.getReturnValue() && damageSource.getDirectEntity() instanceof Player) ((Entity) (Object) this).invulnerableTime = cooldown;
+		if (cir.getReturnValue() && damageSource.getDirectEntity() instanceof Player) ((Entity) (Object) this).invulnerableTime = 10 + cooldown;
 	}
 }
