@@ -2,13 +2,12 @@ package redstonedisorder.combopvp;
 
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
-import com.mojang.brigadier.context.CommandContext;
 import net.fabricmc.api.ModInitializer;
 
-import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.permissions.Permissions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,11 +28,11 @@ public class ComboPvP implements ModInitializer {
 		// Proceed with mild caution.
 
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			dispatcher.register(Commands.literal("combopvp").then(Commands.argument("cooldown", IntegerArgumentType.integer(0))).requires(source -> source.hasPermission(2)).executes(context -> {
+			dispatcher.register(Commands.literal("combopvp").then(Commands.argument("cooldown", IntegerArgumentType.integer(0)).requires(source -> source.permissions().hasPermission(Permissions.COMMANDS_MODERATOR)).executes(context -> {
 				cooldown = IntegerArgumentType.getInteger(context, "cooldown");
 				context.getSource().sendSuccess(() -> Component.literal("Cooldown is now " + cooldown + " ticks"), false);
 				return Command.SINGLE_SUCCESS;
-			}));
+			})));
 		});
 
 		LOGGER.info("ComboPvP loaded!");
